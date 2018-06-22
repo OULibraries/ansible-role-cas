@@ -37,6 +37,7 @@
   shell: >
    cat /etc/cas/tgc.encryption.key.json | jq --raw-output '.k'
   register: cas_tgc_encryption_key
+  check_mode: no        
 
 - name: Set encryption key value as fact
   set_fact:
@@ -46,6 +47,7 @@
   shell: >
    cat /etc/cas/tgc.signing.key.json | jq --raw-output '.k'
   register: cas_tgc_signing_key
+  check_mode: no        
 
 - name: Set signing key value as fact
   set_fact:
